@@ -90,7 +90,7 @@ npx wrangler d1 migrations apply <dbname>
 npx wrangler d1 migrations apply <dbname>  --local
 ```
 
-### 5. Add ENV Credentials
+### 5. Create and Add ENV Credentials
 To enable user login functionality, you need to add either a Brevo SMTP key or Google OAuth credentials (or both) in your .dev.vars file
 
 - **Brevo SMTP Key**: Follow Brevo's documentation to generate an SMTP key.
