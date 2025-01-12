@@ -58,11 +58,11 @@ id = "da88841132724cf8a41416d92a476e95"
 ```
 
 #### NB:
-# Run cf-typegen command to update the env variables
+##### Run cf-typegen command to update the env variables
 ```bash
 npm run cf-typegen
 ```
-# Change the kvnamespace name in the whole directorie with
+##### Change the kvnamespace name in the whole directorie with
 ```bash
 CTRL +  ALT + F
 ```
