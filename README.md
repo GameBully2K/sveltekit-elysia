@@ -75,7 +75,7 @@ npm run cf-typegen
 ```
 ##### Change the kvnamespace name in the whole directorie with
 ```bash
-CTRL +  ALT + F
+SHIFT +  ALT + F
 ```
 
 ### 4. Apply Default Migrations
