@@ -13,30 +13,42 @@ Set up a D1 database to store your application data.
 ```bash
 wrangler d1 create sveltekit-lucia
 ```
+and add the output toml bindings to your wrangler.toml file:
+```toml
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "sveltekit-luciadb"
+```
 
 ### 2. Create a KV Namespace
 Create a KV namespace for managing key-value storage.
 ```bash
 wrangler kv:namespace create sveltekit-lucia
 ```
+and add the output toml bindings to your wrangler.toml file:
+```toml
+[[kv_namespaces]]
+binding = "sveltekit-luciakv"
+id = "da88841132724cf8a41416d92a476e95"
+```
 
 ### 3. Configure `wrangler.toml`
-Link your D1 database and KV namespace in the `wrangler.toml` file. Ensure that the configuration looks something like this:
+Ensure that your `wrangler.toml` file looks something like this:
 
 ```toml
-# Example wrangler.toml
-name = "your-project-name"
-type = "javascript"
+name = "sveltekit-elysia"
+compatibility_date = "2024-06-20"
+pages_build_output_dir = ".svelte-kit/cloudflare"
 
 [vars]
 MY_VARIABLE = "production_value"
 
 [[d1_databases]]
 binding = "DB" # i.e. available in your Worker on env.DB
-database_name = "petboxdb"
+database_name = "sveltekit-luciadb"
 
 [[kv_namespaces]]
-binding = "petboxkv"
+binding = "sveltekit-luciakv"
 id = "da88841132724cf8a41416d92a476e95"
 ```
 
@@ -53,9 +65,12 @@ CTRL +  ALT + F
 ### 4. Apply Default Migrations
 Run the default migration to create the necessary tables for users and sessions. This can be done both remotely and locally.
 
-
 ```bash
 # Run migrations on production
+npx wrangler d1 migrations apply 
+```
+```bash
+# Run migrations localy
 npx wrangler d1 migrations apply --local
 ```
 
