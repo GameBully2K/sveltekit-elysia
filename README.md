@@ -94,7 +94,8 @@ npx wrangler d1 migrations apply <dbname>  --local
 To enable user login functionality, you need to add either a Brevo SMTP key or Google OAuth credentials (or both). 
 
 - **Brevo SMTP Key**: Follow Brevo's documentation to generate an SMTP key.
-  Also don't forget to edit the content of the email and the sender address in ./src/lib/emailing/brevo.ts 
+
+    Also don't forget to edit the content of the email and the sender address in ./src/lib/emailing/brevo.ts 
 - **Google OAuth Credentials**: Create OAuth credentials in the Google Developer Console.
 
 ### 6. Accessing User Objects
