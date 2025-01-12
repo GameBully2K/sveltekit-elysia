@@ -90,13 +90,21 @@ npx wrangler d1 migrations apply <dbname>
 npx wrangler d1 migrations apply <dbname>  --local
 ```
 
-### 5. Add SMTP Credentials
-To enable user login functionality, you need to add either a Brevo SMTP key or Google OAuth credentials (or both). 
+### 5. Add ENV Credentials
+To enable user login functionality, you need to add either a Brevo SMTP key or Google OAuth credentials (or both) in your .dev.vars file
 
 - **Brevo SMTP Key**: Follow Brevo's documentation to generate an SMTP key.
 
     Also don't forget to edit the content of the email and the sender address in ./src/lib/emailing/brevo.ts 
 - **Google OAuth Credentials**: Create OAuth credentials in the Google Developer Console.
+
+Make sure you .dev.vars file looks like this:
+```env
+SMTP_API_KEY=xkeysib-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+GOOGLE_CLIENT_ID=0000000-xxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxx
+```
 
 ### 6. Accessing User Objects
 Once set up, you will have access to the user's object globally in every request event or page load event.
