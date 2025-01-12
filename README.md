@@ -67,11 +67,11 @@ Run the default migration to create the necessary tables for users and sessions.
 
 ```bash
 # Run migrations on production
-npx wrangler d1 migrations apply 
+npx wrangler d1 migrations apply <dbname> 
 ```
 ```bash
 # Run migrations localy
-npx wrangler d1 migrations apply --local
+npx wrangler d1 migrations apply <dbname>  --local
 ```
 
 ### 5. Add SMTP Credentials
