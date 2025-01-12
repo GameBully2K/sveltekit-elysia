@@ -101,6 +101,12 @@ To enable user login functionality, you need to add either a Brevo SMTP key or G
 ### 6. Accessing User Objects
 Once set up, you will have access to the user's object globally in every request event or page load event.
 
+### 7. Drizzle Kit
+If you edit your schema and want to update your db you can use:
+```bash
+npx drizzle-kit generate
+```
+
 ## Project Structure
 
 - `src/`: Contains your Svelte components and application logic.

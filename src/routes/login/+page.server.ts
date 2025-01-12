@@ -4,7 +4,7 @@ import { eq } from "drizzle-orm";
 import {drizzle} from "drizzle-orm/d1";
 import * as schema from "../../db/schema";
 import { generateIdFromEntropySize } from "lucia";
-import {sendVerificationEmail} from "$lib/emailing/sib";
+import {sendVerificationEmail} from "$lib/emailing/brevo";
 
 import type { Actions, PageServerLoad } from "./$types";
 import { dev } from "$app/environment";
@@ -60,7 +60,7 @@ export const actions: Actions = {
 					rectify: rectify
 				}
 			}
-			if ( code == await event.platform?.env.petboxkv.get(email) ) {
+			if ( code == await event.platform?.env.sveltekit-luciakv.get(email) ) {
 				const existingUser = await db.query.userTable.findFirst({
 					where: eq(schema.userTable.email, email)
 				})
@@ -95,7 +95,7 @@ export const actions: Actions = {
 		try {
 		//generate code
 		const code = Math.floor(100000 + Math.random() * 900000).toString();
-		await event.platform?.env.petboxkv.put(email, code, {expirationTtl: 600}); // 10 minutes
+		await event.platform?.env.sveltekit-luciakv.put(email, code, {expirationTtl: 600}); // 10 minutes
 		//send email
 		if (dev) {
 			console.log("code", code);

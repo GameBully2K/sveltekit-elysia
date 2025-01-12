@@ -2,7 +2,7 @@
 // by running `wrangler types`
 
 interface Env {
-	petboxkv: KVNamespace;
+	sveltekit-luciakv: KVNamespace;
 	MY_VARIABLE: "production_value";
 	SMTP_API_KEY: string;
 	GOOGLE_CLIENT_ID: string;
