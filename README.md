@@ -8,6 +8,11 @@ Welcome to your SvelteKit project template! This repository provides a basic set
 
 Follow these steps to set up your project:
 
+### 0. As usual
+```bash
+npm i
+```
+
 ### 1. Create a D1 Database
 Set up a D1 database to store your application data.
 ```bash
@@ -53,24 +58,24 @@ id = "da88841132724cf8a41416d92a476e95"
 ```
 
 #### NB:
-```bash
 # Run cf-typegen command to update the env variables
+```bash
 npm run cf-typegen
 ```
-```bash
 # Change the kvnamespace name in the whole directorie with
+```bash
 CTRL +  ALT + F
 ```
 
 ### 4. Apply Default Migrations
 Run the default migration to create the necessary tables for users and sessions. This can be done both remotely and locally.
 
-```bash
 # Run migrations on production
+```bash
 npx wrangler d1 migrations apply <dbname> 
 ```
-```bash
 # Run migrations localy
+```bash
 npx wrangler d1 migrations apply <dbname>  --local
 ```
 
