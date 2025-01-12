@@ -1,8 +1,14 @@
-Sure! Here’s a README template for your SvelteKit project based on the details you provided:
+# SvelteKit Lucia Project Template
 
-# SvelteKit Project Template
+Welcome to your SvelteKit Lucia project template! This repository provides a basic setup for building applications using SvelteKit, complete with user authentication and database integration.
 
-Welcome to your SvelteKit project template! This repository provides a basic setup for building applications using SvelteKit, complete with user authentication and database integration.
+###**Svelte-kit**: Typescript-ready Meta-framework
+###**Lucia Auth**: low abstraction Auth Library
+###**Drizzle ORM**: lite weight Object Relational Mapper
+###**Cloudflare Stack**: Cloudflare d1 SQL database, KV namespace, and more through the wrangler interface
+###**Tailwind CSS**: CSS framework for rapid UI development
+###**SKELETON UI**: Famous Svelte library
+
 
 ## Getting Started
 
