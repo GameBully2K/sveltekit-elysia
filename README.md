@@ -70,11 +70,11 @@ CTRL +  ALT + F
 ### 4. Apply Default Migrations
 Run the default migration to create the necessary tables for users and sessions. This can be done both remotely and locally.
 
-# Run migrations on production
+##### Run migrations on production
 ```bash
 npx wrangler d1 migrations apply <dbname> 
 ```
-# Run migrations localy
+##### Run migrations localy
 ```bash
 npx wrangler d1 migrations apply <dbname>  --local
 ```
